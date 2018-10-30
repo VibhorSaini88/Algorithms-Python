@@ -1,8 +1,8 @@
-from collections import deque
-from decimal import Decimal
+from collections import deque			#import deque functionality frome collections libarary.
+from decimal import Decimal			##import Decimal functionality frome decimal libarary.
 _inf = Decimal('infinity')
 
-class BreadthFirstSearch(object):
+class BreadthFirstSearch(object):		#Base class create of BreadthFirstSearch.
 	def __init__(self, G, source):
 		self._q = deque()
 		self._marked = [ False for i in range(G.V()) ]
@@ -35,10 +35,8 @@ class BreadthFirstSearch(object):
 
 	def hasPathTo(self, v):
 		return self._marked[v]
-
 	def distTo(self, v):
 		return self._distTo[v]
-
 	def pathTo(self, v):
 		"returns path from source to v"
 		if not self.hasPathTo(v): return None
